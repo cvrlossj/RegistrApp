@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
+  <ion-toolbar [style]="'--background: var(--tp-color);'">
+    <ion-title [style]="'--color: var(--txt-color-tp);'">
+      Inicio
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,8 +13,45 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <ion-card class="card-blank">
+    <ion-card-header>
+      <ion-card-title><strong>¡Buenos días! Lucas 👋</strong></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      ¡Bienvenido al panel de asistencia DuocUC! Marcar asistencia escaneando el código QR que genere tu profesor.
+    </ion-card-content>
+  </ion-card>
+
+  <div id="separator">
+    <div style="background-color: #F5F7FA; height: 19px; margin: 10px 0;"></div>
   </div>
+
+  <!-- Información del usuario -->
+  <div>
+    <h2></h2>
+    <ion-list>
+      <ion-item>
+        <ion-input readonly label="Nombre:"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-input readonly label="Rut:"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-input readonly label="Carrera:"></ion-input>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div id="separator">
+    <div style="background-color: #F5F7FA; height: 19px; margin: 10px 0;"></div>
+  </div>
+
+  <!-- Marcar asistencia -->
+  <div>
+    <ion-button expand="full" class="">Marcar asistencia</ion-button>
+
+  </div>
+
 </ion-content>
