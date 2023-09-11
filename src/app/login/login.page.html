@@ -23,14 +23,16 @@
     <ion-card-content>
       <ion-list>
         <ion-item>
-          <ion-input type="text" label="Usuario" placeholder="Ingrese su usuario" [(ngModel)]="username"></ion-input>
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input type="text" placeholder="Ingrese su usuario" [(ngModel)]="username"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-input type="password" label="Contraseña" placeholder="Ingrese su contraseña" [(ngModel)]="password"></ion-input>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" placeholder="Ingrese su contraseña" [(ngModel)]="password"></ion-input>
         </ion-item>
 
-        <a href="/password" style="margin-left: 15px; color: #808080; text-decoration: none;">Contraseña olvidada</a>
+        <a href="/password" style="margin-left: 15px; color: #e32c2c; text-decoration: none;">Contraseña olvidada</a>
         <br>
         <div>
           <ion-button expand="block" color="warning" (click)="login()">Ingresar</ion-button>

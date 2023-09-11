@@ -19,19 +19,17 @@ export class LoginPage {
     private toastController: ToastController
   ) { }
 
-
-  // login() {
-  //   if (this.authService.login(this.username, this.password)) {
-  //     this.router.navigate(['/home'])
-  //   } else {
-   
-  //   }
-  // }
   async login() {
     if (this.authService.login(this.username, this.password)){
         this.router.navigate(['/home'])
         this.username = '';
         this.password = '';
+        const iniciar = await this.toastController.create({
+          message: 'Iniciaste sesión con éxito',
+          duration: 2000,
+          color: 'success'
+        });
+        await iniciar.present()
     } else {
       const toast = await this.toastController.create({
         message: 'Usuario o contraseña inválidos',

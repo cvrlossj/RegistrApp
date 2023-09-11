@@ -6,7 +6,7 @@ import { ToastController } from '@ionic/angular';
 })
 export class AuthService {
 
-  constructor() { }
+  constructor(private toastController: ToastController) { }
 
   register(username: string, password: string, name: string, last_name: string, rut: string, career: string) {
     const users = JSON.parse(localStorage.getItem('users') || '[]');
@@ -33,6 +33,35 @@ export class AuthService {
     }
     return false;
   }
+
+  recoverPassword(username: string, newPassword: string): boolean {
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+
+    const userIndex = users.findIndex((u: any) => u.username === username);
+
+    if (userIndex !== -1) {
+      // Actualiza la contraseña para el usuario encontrado
+      users[userIndex].password = newPassword;
+      localStorage.setItem('users', JSON.stringify(users));
+
+      this.presentToast('Contraseña recuperada con éxito.');
+      return true;
+    } else {
+      this.presentToast('El usuario no existe.');
+      return false;
+    }
+  }
+
+  async presentToast(message: string) {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 2000,
+    });
+    toast.present();
+  }
+
+
+
 
   logout(){
     localStorage.removeItem('currentUser')

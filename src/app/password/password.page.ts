@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-password',
   templateUrl: './password.page.html',
   styleUrls: ['./password.page.scss'],
 })
-export class PasswordPage implements OnInit {
+export class PasswordPage {
 
-  constructor() { }
+  username: string = '';
+  newPassword: string = '';
 
-  ngOnInit() {
+  constructor(private authService: AuthService) { }
+
+  recoverPassword(){
+    this.authService.recoverPassword(this.username, this.newPassword);
   }
+
 
 }
