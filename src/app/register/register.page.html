@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>register</ion-title>
+  <ion-toolbar [style]="'--background: var(--tp-color);'">
+    <ion-title [style]="'--color: var(--txt-color-tp);'">Regístrate</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,4 +10,57 @@
       <ion-title size="large">register</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div id="separator">
+    <div style="background-color: #EEEEEE; height: 57px; margin: 0px 0;">
+      <p style="margin: 0;padding-top: 20px ;padding-left: 21px; color: #AEAEAE;">Introduzca su información</p>
+    </div>
+  </div>
+
+  <ion-card class="card-blank">
+    <ion-card-content>
+      <ion-list>
+        <!-- Usuario -->
+        <ion-item>
+          <ion-input type="text" label="Usuario" placeholder="Ingrese su usuario" [(ngModel)]="username"></ion-input>
+        </ion-item>
+
+        <!-- Nombre -->
+        <ion-item>
+          <ion-input type="text" label="Nombre" placeholder="Ingrese su nombre" [(ngModel)]="name"></ion-input>
+        </ion-item>
+
+        <!-- Apellido -->
+        <ion-item>
+          <ion-input type="text" label="Apellido" placeholder="Ingrese su apellido" [(ngModel)]="last_name"></ion-input>
+        </ion-item>
+
+        <!-- Rut -->
+        <ion-item>
+          <ion-input type="text" label="Rut" placeholder="Ingrese su rut" [(ngModel)]="rut"></ion-input>
+        </ion-item>
+
+        <!-- OPCIONES -->
+        <ion-item>
+          <ion-select label="Carrera" placeholder="Seleccione su carrera">
+            <ion-select-option value="ingeniería en informática" [(ngModel)]="career">Ingeniería en informática</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <!-- Contraseña -->
+        <ion-item>
+          <ion-input type="password" label="Contraseña" placeholder="Ingrese su contraseña" [(ngModel)]="password"></ion-input>
+        </ion-item>
+
+
+        <br>
+        <div>
+          <ion-button expand="block" color="warning" (click)="register()">Registrarse</ion-button>
+        </div>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  
+
 </ion-content>

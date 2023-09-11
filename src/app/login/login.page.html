@@ -2,7 +2,7 @@
   <ion-toolbar [style]="'--background: var(--tp-color);'">
     <ion-title [style]="'--color: var(--txt-color-tp);'">Iniciar sesión</ion-title>
 
-    <a href="" slot="end" style="margin-right: 10px; color: #fff; text-decoration: none;">Regístrate</a>
+    <a href="register" slot="end" style="margin-right: 10px; color: #fff; text-decoration: none;">Regístrate</a>
   </ion-toolbar>
 </ion-header>
 
@@ -23,24 +23,21 @@
     <ion-card-content>
       <ion-list>
         <ion-item>
-          <ion-input type="text" label="Usuario"></ion-input>
+          <ion-input type="text" label="Usuario" placeholder="Ingrese su usuario" [(ngModel)]="username"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-input type="password" label="Contraseña"></ion-input>
+          <ion-input type="password" label="Contraseña" placeholder="Ingrese su contraseña" [(ngModel)]="password"></ion-input>
         </ion-item>
 
-        <a href="" style="margin-left: 15px; color: #808080; text-decoration: none;">Contraseña olvidada</a>
+        <a href="/password" style="margin-left: 15px; color: #808080; text-decoration: none;">Contraseña olvidada</a>
+        <br>
+        <div>
+          <ion-button expand="block" color="warning" (click)="login()">Ingresar</ion-button>
+        </div>
       </ion-list>
     </ion-card-content>
   </ion-card>
-
-    <!-- Marcar asistencia -->
-    <div>
-      <ion-button expand="full" class="">Ingresar</ion-button>
-  
-    </div>
-
   
 
 </ion-content>

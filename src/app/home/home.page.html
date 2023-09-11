@@ -15,7 +15,7 @@
 
   <ion-card class="card-blank">
     <ion-card-header>
-      <ion-card-title><strong>¡Buenos días! Lucas 👋</strong></ion-card-title>
+      <ion-card-title><strong>¡Buenos días! 👋</strong></ion-card-title>
     </ion-card-header>
     <ion-card-content>
       ¡Bienvenido al panel de asistencia DuocUC! Marcar asistencia escaneando el código QR que genere tu profesor.
@@ -27,22 +27,29 @@
   </div>
 
   <!-- Información del usuario -->
-  <div>
-    <h2></h2>
-    <ion-list>
-      <ion-item>
-        <ion-input readonly label="Nombre:"></ion-input>
-      </ion-item>
-    
-      <ion-item>
-        <ion-input readonly label="Rut:"></ion-input>
-      </ion-item>
-    
-      <ion-item>
-        <ion-input readonly label="Carrera:"></ion-input>
-      </ion-item>
-    </ion-list>
-  </div>
+  <ion-card class="card-blank">
+    <ion-card-header>
+      <ion-card-title><strong>Información adicional 📚</strong></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+     <!-- El contenido del usuario traído desde las otras vistas -->
+     <div>
+      <ion-list>
+        <ion-item>
+          <ion-input readonly label="Nombre:" [value]="user?.name"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-input readonly label="Rut:" [value]="user?.rut"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-input readonly label="Carrera:"></ion-input>
+        </ion-item>
+      </ion-list>
+     </div>
+    </ion-card-content>
+  </ion-card>
 
   <div id="separator">
     <div style="background-color: #F5F7FA; height: 19px; margin: 10px 0;"></div>
@@ -50,8 +57,22 @@
 
   <!-- Marcar asistencia -->
   <div>
-    <ion-button expand="full" class="">Marcar asistencia</ion-button>
-
+    <ion-button expand="block" color="warning">Marcar asistencia</ion-button>
+    <ion-button expand="block" color="danger" (click)="logout()">Cerrar sesión</ion-button>
   </div>
 
+
+  <!-- Lista de asistencia -->
+  <ion-card class="card-blank">
+    <ion-card-header>
+      <ion-card-title><strong>Lista de asistencia ✅</strong></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+     <!-- El contenido de la lista de la asistencia realizada -->
+     <div>
+
+     </div>
+    </ion-card-content>
+  </ion-card>
+ 
 </ion-content>
