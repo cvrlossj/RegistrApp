@@ -17,6 +17,7 @@
     </div>
   </div>
 
+
   <ion-card class="card-blank">
     <ion-card-content>
       <ion-list>
@@ -45,10 +46,20 @@
         </ion-item>
 
         <!-- Carrera -->
+
+        <ion-item>
+          <ion-select label="Carrera" placeholder="Seleccionar" [(ngModel)]="career">
+            <ion-select-option value="Ingeniería Agricola">Ingeníeria Agricola</ion-select-option>
+            <ion-select-option value="Ingeniería en Medio Ambiente">Ingeníeria en Medio Ambiente</ion-select-option>
+            <ion-select-option value="Ingeniería en Informática">Ingeníeria en informática</ion-select-option>
+          </ion-select>
+        </ion-item>
+        
+        <!-- 
         <ion-item>
           <ion-label position="floating">Carrera</ion-label>
           <ion-input type="text" placeholder="Ingrese su carrera" [(ngModel)]="career"></ion-input>
-        </ion-item>
+        </ion-item> -->
 
         <!-- Contraseña -->
         <ion-item>
