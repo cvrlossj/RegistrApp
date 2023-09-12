@@ -15,7 +15,7 @@
 
   <ion-card class="card-blank">
     <ion-card-header>
-      <ion-card-title><strong>¡Buenos días! 👋</strong></ion-card-title>
+      <ion-card-title><strong>¡Buenos días! {{ user?.name }} {{ user?.last_name }}👋</strong></ion-card-title>
     </ion-card-header>
     <ion-card-content>
       ¡Bienvenido al panel de asistencia DuocUC! Marcar asistencia escaneando el código QR que genere tu profesor.
@@ -26,13 +26,12 @@
     <div style="background-color: #F5F7FA; height: 19px; margin: 10px 0;"></div>
   </div>
 
-  <!-- Información del usuario -->
+  <!-- INFORMACIÓN ADICIONAL DEL USUARIO -->
   <ion-card class="card-blank">
     <ion-card-header>
       <ion-card-title><strong>Información adicional 📚</strong></ion-card-title>
     </ion-card-header>
     <ion-card-content>
-     <!-- El contenido del usuario traído desde las otras vistas -->
      <div>
       <ion-list>
         <ion-item>
@@ -44,7 +43,7 @@
         </ion-item>
       
         <ion-item>
-          <ion-input readonly label="Carrera:"></ion-input>
+          <ion-input readonly label="Carrera:" [value]="user?.career"></ion-input>
         </ion-item>
       </ion-list>
      </div>
@@ -55,9 +54,15 @@
     <div style="background-color: #F5F7FA; height: 19px; margin: 10px 0;"></div>
   </div>
 
-  <!-- Marcar asistencia -->
+  <!-- SCANEEAR -->
   <div>
-    <ion-button expand="block" color="warning">Marcar asistencia</ion-button>
+    <ion-button expand="block" color="warning">
+      <ion-icon name="camera-outline" style="margin-right: 10px; "></ion-icon>
+      Leer un QR
+    </ion-button>
+
+
+    <!-- CERRAR SESIÓN  -->
     <ion-button expand="block" color="danger" (click)="logout()">Cerrar sesión</ion-button>
   </div>
 
@@ -68,7 +73,7 @@
       <ion-card-title><strong>Lista de asistencia ✅</strong></ion-card-title>
     </ion-card-header>
     <ion-card-content>
-     <!-- El contenido de la lista de la asistencia realizada -->
+     
      <div>
 
      </div>

@@ -22,34 +22,38 @@
       <ion-list>
         <!-- Usuario -->
         <ion-item>
-          <ion-input type="text" label="Usuario" placeholder="Ingrese su usuario" [(ngModel)]="username"></ion-input>
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input type="text" placeholder="Ingrese su usuario" [(ngModel)]="username"></ion-input>
         </ion-item>
 
         <!-- Nombre -->
         <ion-item>
-          <ion-input type="text" label="Nombre" placeholder="Ingrese su nombre" [(ngModel)]="name"></ion-input>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input type="text" placeholder="Ingrese su nombre" [(ngModel)]="name"></ion-input>
         </ion-item>
 
         <!-- Apellido -->
         <ion-item>
-          <ion-input type="text" label="Apellido" placeholder="Ingrese su apellido" [(ngModel)]="last_name"></ion-input>
+          <ion-label position="floating">Apellido</ion-label>
+          <ion-input type="text" placeholder="Ingrese su apellido" [(ngModel)]="last_name"></ion-input>
         </ion-item>
 
         <!-- Rut -->
         <ion-item>
-          <ion-input type="text" label="Rut" placeholder="Ingrese su rut" [(ngModel)]="rut"></ion-input>
+          <ion-label position="floating">Rut</ion-label>
+          <ion-input type="text" placeholder="Ingrese su rut" [(ngModel)]="rut"></ion-input>
         </ion-item>
 
-        <!-- OPCIONES -->
+        <!-- Carrera -->
         <ion-item>
-          <ion-select label="Carrera" placeholder="Seleccione su carrera">
-            <ion-select-option value="ingeniería en informática" [(ngModel)]="career">Ingeniería en informática</ion-select-option>
-          </ion-select>
+          <ion-label position="floating">Carrera</ion-label>
+          <ion-input type="text" placeholder="Ingrese su carrera" [(ngModel)]="career"></ion-input>
         </ion-item>
 
         <!-- Contraseña -->
         <ion-item>
-          <ion-input type="password" label="Contraseña" placeholder="Ingrese su contraseña" [(ngModel)]="password"></ion-input>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" placeholder="Ingrese su contraseña" [(ngModel)]="password"></ion-input>
         </ion-item>
 
 
@@ -60,7 +64,5 @@
       </ion-list>
     </ion-card-content>
   </ion-card>
-
-  
 
 </ion-content>

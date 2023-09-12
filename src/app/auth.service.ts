@@ -14,7 +14,7 @@ export class AuthService {
     const userExists = users.some((u: any) => u.username === username);
     if(userExists){
       alert('El usuario ya existe. Por favor, elija otro usuario')
-      return false;
+        return false;
     }
     users.push({ username, password, name, last_name, rut, career });
     localStorage.setItem('users', JSON.stringify(users));

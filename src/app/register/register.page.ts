@@ -37,7 +37,6 @@ export class RegisterPage  {
       return
     }
     
-    console.log('carrera seleccionada:', this.career);
     if (this.authService.register(this.username, this.password, this.name, this.last_name, this.rut, this.career)){
         const registro = await this.toastController.create({
           message: '¡Registro éxitoso!',
@@ -45,7 +44,7 @@ export class RegisterPage  {
           color: 'success'
         })
         await registro.present()
-        this.router.navigate(['/home'])
+        this.router.navigate(['/login'])
     } else {
       const error = await this.toastController.create({
         message: 'Problemas al crear un usuario',
