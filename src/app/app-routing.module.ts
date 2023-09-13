@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { LoginPage  } from './login/login.page';
+
 
 const routes: Routes = [
   {
@@ -23,7 +23,20 @@ const routes: Routes = [
   {
     path: 'password',
     loadChildren: () => import('./password/password.module').then( m => m.PasswordPageModule)
+  },  {
+    path: 'clase-registrada',
+    loadChildren: () => import('./clase-registrada/clase-registrada.module').then( m => m.ClaseRegistradaPageModule)
   },
+  {
+    path: 'clase-registrada',
+    loadChildren: () => import('./clase-registrada/clase-registrada.module').then( m => m.ClaseRegistradaPageModule)
+  },
+  {
+    path: 'qr',
+    loadChildren: () => import('./qr/qr.module').then( m => m.QrPageModule)
+  },
+
+
 ];
 
 @NgModule({

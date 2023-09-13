@@ -1,0 +1,73 @@
+<ion-header [translucent]="true">
+  <ion-toolbar [style]="'--background: var(--tp-color);'">
+    <ion-title [style]="'--color: var(--txt-color-tp);'">Registrar asistencia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">clase-registrada</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <!-- INFORMACIÓN ADICIONAL DE LA CLASE -->
+  <ion-card class="card-blank">
+    
+    <ion-card-header>
+      <ion-card-title><strong>Información adicional de la clase 🙎</strong></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+     <div>
+      <ion-list>
+        <ion-item>
+          <ion-input readonly label="Nombre profesor:"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input readonly label="Hora clase:"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-input readonly label="Sala:"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-input readonly label="Día:"></ion-input>
+        </ion-item>
+      </ion-list>
+
+     </div>
+    </ion-card-content>
+  </ion-card>
+
+  <div id="separator">
+    <div style="background-color: #F5F7FA; height: 19px; margin: 10px 0;"></div>
+  </div>
+
+
+  <ion-card class="card-blank">
+    <ion-card-header>
+      <ion-card-title><strong>Información del Alumno 🙎</strong></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+     <div>
+      <ion-list>
+        <ion-item>
+          <ion-input readonly label="Nombre Alumno:"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input readonly label="Rut Alumno:"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-input readonly label="TimeStamp:"></ion-input>
+        </ion-item>
+      </ion-list>
+     </div>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
