@@ -11,6 +11,40 @@
     </ion-toolbar>
   </ion-header>
 
+  <div class="container">
+    <div class="scanner-sheel" [hidden]="!hasDevices">
+      <select (change)="onDeviceSelectChange()">
+        <option value="" [selected]="!currentDevice">No device selected</option>
+        <option *ngFor="let device of availableDevices" [value]="device.deviceId" [selected]="currentDevice && device.deviceId === currentDevice.deviceId">{{ device.label }}</option>
+      </select>
+    
+      <zxing-scanner #scanner start="true" [device]="currentDevice" (scanSuccess)="handleQrCodeResult($event)" [formats]="formats"></zxing-scanner>
+    
+      <section class="results" *ngIf="qrResultString">
+        <h3>Asistencia registrada:</h3>
+        <ion-card *ngFor="let u of usuariosStorage" >
+          <h2>Datos clase</h2>
+          <div class="box">
+            <h4>{{ qrResultString }}</h4>
+          </div>
+          <h2>Datos usuario</h2>
+          <div class="box">
+            <h3>Nombre:</h3>
+            <h4>{{u.nombre}}</h4>
+          </div>
+          <div class="box">
+            <h3>Apellido:</h3>
+            <h4>{{u.apellido}}</h4>
+          </div>
+          <div class="box">
+            <h3>Rut:</h3>
+            <h4>{{u.rut}}</h4>
+          </div>
+        </ion-card>
+      </section>
+    </div>
+  </div>
+
 
   <!-- INFORMACIÓN ADICIONAL DE LA CLASE -->
   <ion-card class="card-blank">

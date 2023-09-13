@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ClaseRegistradaPageRoutingModule } from './clase-registrada-routing.module';
 
 import { ClaseRegistradaPage } from './clase-registrada.page';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ClaseRegistradaPageRoutingModule
+    ClaseRegistradaPageRoutingModule,
+    ZXingScannerModule
   ],
   declarations: [ClaseRegistradaPage]
 })
