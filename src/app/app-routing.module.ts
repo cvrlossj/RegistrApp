@@ -23,7 +23,8 @@ const routes: Routes = [
   {
     path: 'password',
     loadChildren: () => import('./password/password.module').then( m => m.PasswordPageModule)
-  },  {
+  },
+  {
     path: 'clase-registrada',
     loadChildren: () => import('./clase-registrada/clase-registrada.module').then( m => m.ClaseRegistradaPageModule)
   },

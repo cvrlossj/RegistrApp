@@ -2,6 +2,7 @@ import { Component, AfterViewInit, ViewChild } from '@angular/core';
 import { ZXingScannerComponent } from '@zxing/ngx-scanner';
 import { Result, BarcodeFormat } from '@zxing/library';
 import { Router } from '@angular/router';
+import { Geolocation } from '@capacitor/geolocation';
 
 
 @Component({
@@ -24,6 +25,9 @@ export class ClaseRegistradaPage {
     contraseña: '',
     usuario: ''
   };
+
+  latitude: number=0;
+  longitude: number=0;
 
   hasDevices: boolean = false;
   qrResultString: string = '';
@@ -92,6 +96,7 @@ export class ClaseRegistradaPage {
     }
 
     ngOnInit() {
+      this.getCurrentLocation();
       this.cargaInfoUsuario();
     }
 
@@ -111,5 +116,11 @@ export class ClaseRegistradaPage {
     this.apellido = this.datoUsuario.apellido;
     this.rut = this.datoUsuario.rut;
     
+  }
+
+  async getCurrentLocation() {
+    const coordenadas = await Geolocation.getCurrentPosition();
+    this.latitude = coordenadas.coords.latitude;
+    this.longitude = coordenadas.coords.longitude;
   }
 }
