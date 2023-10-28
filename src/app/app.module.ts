@@ -11,7 +11,7 @@ import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -20,7 +20,8 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    ZXingScannerModule
+    ZXingScannerModule,
+    HttpClientModule
   ],
   declarations: [AppComponent],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

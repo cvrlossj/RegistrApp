@@ -55,11 +55,21 @@
           </ion-select>
         </ion-item>
         
-        <!-- 
+
+        <!-- Region -->
         <ion-item>
-          <ion-label position="floating">Carrera</ion-label>
-          <ion-input type="text" placeholder="Ingrese su carrera" [(ngModel)]="career"></ion-input>
-        </ion-item> -->
+          <ion-select label="Región" (ionChange)="cargarComuna()" placeholder="Seleccione una región" [(ngModel)]="regionSelect">
+            <ion-select-option *ngFor="let i of regiones" [value]="i.id">{{i.nombre}}</ion-select-option>
+          </ion-select>
+        </ion-item> 
+
+        <!-- Comuna -->
+
+        <ion-item>
+          <ion-select label="Comuna" [disabled]="disabledComuna" placeholder="Seleccione una comuna" [(ngModel)]="comunaSelect">
+            <ion-select-option *ngFor="let i of comunas" [value]="i.id">{{i.nombre}}</ion-select-option>
+          </ion-select>
+        </ion-item>
 
         <!-- Contraseña -->
         <ion-item>

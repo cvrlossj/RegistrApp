@@ -8,7 +8,7 @@ export class AuthService {
 
   constructor(private toastController: ToastController) { }
 
-  register(username: string, password: string, name: string, last_name: string, rut: string, career: string) {
+  register(username: string, password: string, name: string, last_name: string, rut: string, career: string, regionSelect: number, comunaSelect: number ) {
     const users = JSON.parse(localStorage.getItem('users') || '[]');
 
     const userExists = users.some((u: any) => u.username === username);
@@ -16,7 +16,7 @@ export class AuthService {
       alert('El usuario ya existe. Por favor, elija otro usuario')
         return false;
     }
-    users.push({ username, password, name, last_name, rut, career });
+    users.push({ username, password, name, last_name, rut, career, regionSelect, comunaSelect });
     localStorage.setItem('users', JSON.stringify(users));
 
     return true;
