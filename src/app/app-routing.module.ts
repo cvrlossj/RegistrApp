@@ -9,8 +9,8 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: '',
-    redirectTo: 'login',
+    path: '**',
+    redirectTo: 'e404',
     pathMatch: 'full'
   },
   {
@@ -37,6 +37,11 @@ const routes: Routes = [
     path: 'qr',
     loadChildren: () => import('./qr/qr.module').then( m => m.QrPageModule)
   },
+  {
+    path: 'e404',
+    loadChildren: () => import('./e404/e404.module').then( m => m.E404PageModule)
+  },
+
 
 
 ];
