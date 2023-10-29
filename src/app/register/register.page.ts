@@ -101,5 +101,9 @@ export class RegisterPage implements OnInit {
     }
   }
 
+  volver(){
+    window.history.back();
+  }
+
 
 }

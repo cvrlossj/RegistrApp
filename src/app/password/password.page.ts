@@ -17,5 +17,8 @@ export class PasswordPage {
     this.authService.recoverPassword(this.username, this.newPassword);
   }
 
+  volver(){
+    window.history.back();
+  }
 
 }
