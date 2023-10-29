@@ -3,7 +3,7 @@ import { ZXingScannerComponent } from '@zxing/ngx-scanner';
 import { Result, BarcodeFormat } from '@zxing/library';
 import { Router } from '@angular/router';
 import { Geolocation } from '@capacitor/geolocation';
-
+import { Camera, CameraResultType } from '@capacitor/camera';
 
 @Component({
   selector: 'app-clase-registrada',
@@ -28,6 +28,8 @@ export class ClaseRegistradaPage {
 
   latitude: number=0;
   longitude: number=0;
+
+  selfieImage: string = '';
 
   hasDevices: boolean = false;
   qrResultString: string = '';
@@ -123,4 +125,17 @@ export class ClaseRegistradaPage {
     this.latitude = coordenadas.coords.latitude;
     this.longitude = coordenadas.coords.longitude;
   }
+
+  async tomarSelfie(){
+    const result = await Camera.getPhoto({
+      quality:90,
+      allowEditing: true,
+      resultType: CameraResultType.DataUrl
+    });
+
+    if (result && result.dataUrl ){
+      this.selfieImage = result.dataUrl;
+    }
+  }
+  
 }

@@ -10,6 +10,7 @@ import { Geolocation } from '@capacitor/geolocation';
 })
 export class HomePage implements OnInit {
   
+
   latitude: number=0;
   longitude: number=0;
 
@@ -33,7 +34,6 @@ export class HomePage implements OnInit {
     this.latitude = coordenadas.coords.latitude;
     this.longitude = coordenadas.coords.longitude;
   }
-
 
 
   logout(){

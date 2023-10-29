@@ -19,8 +19,28 @@
       </select>
     
       <zxing-scanner #scanner start="true" [device]="currentDevice" (scanSuccess)="handleQrCodeResult($event)" [formats]="formats"></zxing-scanner>
-    
-      <section class="results" *ngIf="qrResultString">
+        
+      
+      <!-- SEPARADOR DEL CONTENIDO -->
+        <div id="separator" *ngIf="qrResultString">
+          <div style="background-color: #F5F7FA; height: 19px; margin: 10px 0;"></div>
+        </div>
+
+         <!-- TOMAR UNA FOTO -->
+         <div class="center-content" *ngIf="qrResultString">
+            <ion-button expand="block" color="primary" (click)="tomarSelfie()">
+              <ion-icon name="camera-outline" style="margin-right: 10px;"></ion-icon>
+              Tomar Selfie</ion-button>
+            <img [src]="selfieImage" *ngIf="selfieImage" alt="Selfie">
+          </div>
+
+          <!-- SEPARADOR DEL CONTENIDO -->
+          <div id="separator" *ngIf="qrResultString">
+            <div style="background-color: #F5F7FA; height: 19px; margin: 10px 0;"></div>
+          </div>
+
+
+      <section class="results" *ngIf="qrResultString" >
         <h3>Asistencia registrada:</h3>
         <ion-card *ngFor="let u of usuariosStorage" >
           <ion-card class="card-blank">
