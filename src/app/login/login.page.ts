@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
-
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -17,12 +17,13 @@ export class LoginPage {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private navCtrl: NavController
   ) { }
 
   async login() {
     if (this.authService.login(this.username, this.password)){
-        this.router.navigate(['/home'])
+        this.navCtrl.navigateRoot('/home');
         this.username = '';
         this.password = '';
         const iniciar = await this.toastController.create({

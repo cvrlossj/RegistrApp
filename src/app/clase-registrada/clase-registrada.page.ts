@@ -4,6 +4,7 @@ import { Result, BarcodeFormat } from '@zxing/library';
 import { Router } from '@angular/router';
 import { Geolocation } from '@capacitor/geolocation';
 import { Camera, CameraResultType } from '@capacitor/camera';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-clase-registrada',
@@ -46,7 +47,8 @@ export class ClaseRegistradaPage {
 
   usuariosStorage!:any;
 
-  constructor(private router:Router) {}
+  constructor(private router:Router,
+    private navCtrl: NavController) {}
 
   ngAfterViewInit(): void {
     this.scanner.camerasFound.subscribe((devices: MediaDeviceInfo[]) => {
@@ -98,8 +100,8 @@ export class ClaseRegistradaPage {
     }
 
     ngOnInit() {
-      this.getCurrentLocation();
       this.cargaInfoUsuario();
+      this.getCurrentLocation();
     }
 
   onDeviceSelectChange() {
@@ -138,4 +140,8 @@ export class ClaseRegistradaPage {
     }
   }
   
+  volver(){
+    this.navCtrl.back();
+  }
+
 }

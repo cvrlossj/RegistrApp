@@ -1,6 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar [style]="'--background: var(--tp-color);'">
     <ion-title [style]="'--color: var(--txt-color-tp);'">Registrar asistencia</ion-title>
+    <ion-button (click)="volver()" slot="end" style="margin-right: 10px; color: #fff; text-decoration: none;">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+       Volver</ion-button>
   </ion-toolbar>
 </ion-header>
 
@@ -40,7 +43,7 @@
           </div>
 
 
-      <section class="results" *ngIf="qrResultString" >
+      <section class="results" >
         <h3>Asistencia registrada:</h3>
         <ion-card *ngFor="let u of usuariosStorage" >
           <ion-card class="card-blank">
